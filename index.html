@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EchoType — ASR Studio</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="shell">
+<header><div class="logo"><span>◉</span> EchoType</div><div class="tag">AUTOMATIC SPEECH RECOGNITION</div></header>
+<main>
+<section class="hero"><div class="eyebrow">WHISPER POWERED</div><h1>Turn voice into <em>text.</em></h1><p>Upload a recording and EchoType will transcribe your speech into editable text.</p></section>
+<section class="card">
+<div id="drop" class="drop"><div class="mic">🎙</div><h2>Drop your audio here</h2><p>or choose a file from your computer</p><input id="file" type="file" accept="audio/*" hidden><button id="choose">Choose audio</button><div class="formats">MP3 · WAV · M4A · OGG · FLAC</div></div>
+<div id="selected" class="selected hidden"><div><strong id="filename"></strong><span id="filesize"></span></div><button id="remove" class="ghost">Remove</button></div>
+<button id="transcribe" class="primary" disabled>Transcribe audio <span>→</span></button>
+<div id="status" class="status hidden"></div>
+</section>
+<section id="result" class="result hidden"><div class="resulthead"><div><div class="eyebrow">TRANSCRIPT</div><h2>Your recognized speech</h2></div><div class="actions"><button id="copy">Copy</button><button id="download">Download .txt</button></div></div><textarea id="text" spellcheck="false" placeholder="Your transcript will appear here..."></textarea><div class="meta"><span id="language"></span><span id="words"></span></div></section>
+</main>
+<footer>EchoType · ASR demonstration project</footer>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
